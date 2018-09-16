@@ -2,56 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on zhySmile</title>
-    <link>http://zhyOwner.github.io/categories/</link>
+    <link>http://zhanghaiyan.net/categories/</link>
     <description>Recent content in Categories on zhySmile</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     
-	<atom:link href="http://zhyOwner.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://zhanghaiyan.net/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>作品</title>
-      <link>http://zhyOwner.github.io/categories/%E4%BD%9C%E5%93%81/</link>
+      <link>http://zhanghaiyan.net/categories/%E4%BD%9C%E5%93%81/</link>
       <pubDate>Sun, 01 Jul 2018 23:27:00 +0800</pubDate>
       
-      <guid>http://zhyOwner.github.io/categories/%E4%BD%9C%E5%93%81/</guid>
+      <guid>http://zhanghaiyan.net/categories/%E4%BD%9C%E5%93%81/</guid>
       <description></description>
     </item>
     
     <item>
       <title>博客</title>
-      <link>http://zhyOwner.github.io/categories/%E5%8D%9A%E5%AE%A2/</link>
+      <link>http://zhanghaiyan.net/categories/%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sun, 15 Jul 2018 22:44:46 +0800</pubDate>
       
-      <guid>http://zhyOwner.github.io/categories/%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>http://zhanghaiyan.net/categories/%E5%8D%9A%E5%AE%A2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>技术分享</title>
-      <link>http://zhyOwner.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</link>
+      <link>http://zhanghaiyan.net/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</link>
       <pubDate>Sun, 09 Sep 2018 21:15:06 +0800</pubDate>
       
-      <guid>http://zhyOwner.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</guid>
+      <guid>http://zhanghaiyan.net/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</guid>
       <description></description>
     </item>
     
     <item>
       <title>版本管理</title>
-      <link>http://zhyOwner.github.io/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</link>
+      <link>http://zhanghaiyan.net/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</link>
       <pubDate>Tue, 05 Jun 2018 22:06:58 +0800</pubDate>
       
-      <guid>http://zhyOwner.github.io/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</guid>
+      <guid>http://zhanghaiyan.net/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</guid>
       <description></description>
     </item>
     
     <item>
       <title>读书笔记</title>
-      <link>http://zhyOwner.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+      <link>http://zhanghaiyan.net/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Sun, 08 Jul 2018 22:15:36 +0800</pubDate>
       
-      <guid>http://zhyOwner.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+      <guid>http://zhanghaiyan.net/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
     

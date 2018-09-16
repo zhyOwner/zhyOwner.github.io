@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>作品 on zhySmile</title>
-    <link>http://zhyOwner.github.io/categories/%E4%BD%9C%E5%93%81/</link>
+    <link>http://zhanghaiyan.net/categories/%E4%BD%9C%E5%93%81/</link>
     <description>Recent content in 作品 on zhySmile</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <lastBuildDate>Sun, 01 Jul 2018 23:27:00 +0800</lastBuildDate>
     
-	<atom:link href="http://zhyOwner.github.io/categories/%E4%BD%9C%E5%93%81/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://zhanghaiyan.net/categories/%E4%BD%9C%E5%93%81/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>自制小游戏 —— Flappy Bird</title>
-      <link>http://zhyOwner.github.io/post/flappybird/</link>
+      <link>http://zhanghaiyan.net/2018/07/01/%E8%87%AA%E5%88%B6%E5%B0%8F%E6%B8%B8%E6%88%8F--flappy-bird/</link>
       <pubDate>Sun, 01 Jul 2018 23:27:00 +0800</pubDate>
       
-      <guid>http://zhyOwner.github.io/post/flappybird/</guid>
+      <guid>http://zhanghaiyan.net/2018/07/01/%E8%87%AA%E5%88%B6%E5%B0%8F%E6%B8%B8%E6%88%8F--flappy-bird/</guid>
       <description>自己制作的第一款小游戏 背景 制作目的 鉴于自己奋战于游戏行业已经不短时间了，却没有一个人独立的做过一款游戏，实在是有些说不过去。而且游戏领域需要掌握的东西很多很多，明明知道自己还有很多缺失，却又不知该从何学起。本着“从实践中来，到实践中去”的原则，先从一个小游戏开始，发现缺失的东西，后面有针对性的去补。通过调研，觉得这款游戏容易上手，适合做第一款练手游戏，所有选择此游戏。
 游戏介绍： 《flappy bird》是一款由来自越南的独立游戏开发者Dong Nguyen所开发的作品，游戏于2013年5月24日上线，并在2014年2月突然暴红。2014年2月，《Flappy Bird》被开发者本人从苹果及谷歌应用商店撤下。2014年8月份正式回归APP STORE，正式加入Flappy迷们期待已久的多人对战模式。游戏中玩家必须控制一只小鸟，跨越由各种不同长度水管所组成的障碍。
 项目工程 项目已经发布到 github Releases，项目地址

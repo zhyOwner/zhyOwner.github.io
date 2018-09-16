@@ -1,0 +1,876 @@
+
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <title>Git 常用命令总结</title>
+  <script src="http://zhanghaiyan.net//bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="http://zhanghaiyan.net//bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="http://zhanghaiyan.net//bower_components/paper-drawer-panel/paper-drawer-panel.html">
+  <link rel="import" href="http://zhanghaiyan.net//bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="http://zhanghaiyan.net//bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="import" href="http://zhanghaiyan.net//bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+  <link rel="import" href="http://zhanghaiyan.net//bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="http://zhanghaiyan.net//bower_components/paper-item/paper-item.html">
+  <link rel="import" href="http://zhanghaiyan.net//bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="http://zhanghaiyan.net//bower_components/iron-image/iron-image.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
+  <style is="custom-style">
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .nav {
+      border-right: 1px solid #ccc;
+    }
+    
+    paper-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--paper-grey-200, #eee);
+       
+      --paper-scroll-header-panel-full-header: {
+        background-image: url(http://zhanghaiyan.net//images/cover.png);
+      };
+       
+      --paper-scroll-header-panel-condensed-header: {
+        background-image: url(http://zhanghaiyan.net//images/cover.png);
+      };
+    }
+    
+    paper-toolbar {
+       
+      height: 256px;
+      background-color: transparent;
+    }
+    .profile{
+      width: 100%;
+      padding-bottom: 20px;
+    }
+    .photo{
+      margin: 20px;
+      display: inline-block;
+      height: 64px; width: 64px;
+      border-radius: 50%;
+    }
+    .article{
+      border: 1px solid #bebebe;
+      padding: 16px;
+      margin: 16px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .title{
+      font-size: 22px;
+      padding: 8px 0 16px;
+    }
+    .description{
+      font-size: 16px;
+      padding-bottom: 8px;
+    }
+    .author{
+      font-size: 16px;
+      padding-left: 20px;
+      color: white;
+    }
+    .design{
+      font-size: 14px;
+    }
+    .copyright{
+      font-size: 16px;
+    }
+    paper-menu a {
+      text-decoration: none;
+      color: #212121;
+    }
+  </style>
+
+</head>
+<body>
+  <paper-drawer-panel id="drawerPanel" responsive-width="1280px">
+    <div class="nav scroll" drawer>
+    
+      <iron-image class="profile" sizing="cover" src="http://zhanghaiyan.net//images/profile.png">
+    
+        
+          <iron-image class="photo" sizing="cover" src="http://zhanghaiyan.net//images/photo.png"></iron-image>
+        
+          <div class="author"></div>
+      </iron-image>
+      <paper-menu>
+        <a href="http://zhanghaiyan.net/"><paper-item>
+          <iron-icon icon="home"></iron-icon>　<div class="flex">Home</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://zhanghaiyan.net//categories/"><paper-item>
+          <iron-icon icon="drafts"></iron-icon>　<div class="flex">Categories</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+        <a href="http://zhanghaiyan.net//tags/"><paper-item>
+          <iron-icon icon="loyalty"></iron-icon>　<div class="flex">Tags</div>
+          <iron-icon icon="chevron-right"></iron-icon>
+        </paper-item></a>
+      </paper-menu>
+    </div>
+
+    <paper-scroll-header-panel main condenses header-height="256" condensed-header-height="64">
+
+      <paper-toolbar>
+
+        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        <div class="bottom title">zhySmile</div>
+        <div class="flex"></div>
+        
+        
+        
+        
+        
+          <a href="http://zhanghaiyan.net//index.xml"><paper-icon-button src="http://zhanghaiyan.net//images/feed-dreamstale27.png"></paper-icon-button></a>
+      
+      </paper-toolbar>
+
+
+
+<div class="content">
+
+  <div class="article">
+    <div class="title">Git 常用命令总结</div>
+    
+      <div class="categories">
+        
+          <a href="http://zhanghaiyan.net//categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/">版本管理</a>
+        
+      </div>
+     
+    <div class="description">
+
+<p>Git 常用命令总结
+<!-- more --></p>
+
+<h1 id="仓库">仓库</h1>
+
+<blockquote>
+<p>在当前目录新建一个 Git 代码库</p>
+</blockquote>
+
+<pre><code>git init  
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>新建一个目录，将其初始化为 Git 代码库</p>
+</blockquote>
+
+<pre><code>git init [project-name]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>下载一个项目和它的整个代码历史</p>
+</blockquote>
+
+<pre><code>git clone [url]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>clone 到指定目录</p>
+</blockquote>
+
+<pre><code> git clone XXX.git &quot;指定目录&quot;
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>clone 时创建新的分支替代默认 Origin HEAD(master)</p>
+</blockquote>
+
+<pre><code>git clone -b [new_branch_name] xxx.git
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>clone 远程分支（git clone 命令默认的只会建立 master 分支）,想要 clone 指定的某一远程分支</p>
+</blockquote>
+
+<pre><code>git checkout -t origin/dev 或 git checkout -b dev origin/dev
+</code></pre>
+
+<hr />
+
+<h1 id="添加-删除文件">添加/删除文件</h1>
+
+<blockquote>
+<p>添加指定文件到暂存区</p>
+</blockquote>
+
+<pre><code>git add [file or dir]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>添加所有文件到暂存区</p>
+</blockquote>
+
+<pre><code>git add .
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>删除指定文件，并且将这个改变添加到暂存区</p>
+</blockquote>
+
+<pre><code>git rm --cached [file]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>改名文件，并且将这个改名放入暂存区</p>
+</blockquote>
+
+<pre><code>git mv [file-original] [file-renamed]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>将工作区清空（针对新添加的文件）</p>
+</blockquote>
+
+<pre><code>git clean -fd
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>将工作区清空（针对有改动的文件）</p>
+</blockquote>
+
+<pre><code>git checkout .
+</code></pre>
+
+<hr />
+
+<h1 id="撤销">撤销</h1>
+
+<blockquote>
+<p>重置暂存区的指定文件，与上一次 commit 保持一致，但工作区不变</p>
+</blockquote>
+
+<pre><code>git reset [file]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>重置暂存区与工作区，与上一次 commit 保持一致</p>
+</blockquote>
+
+<pre><code>git reset --hard
+git reset --hard HEAD^ 撤消上一次提交
+git reset --hard HEAD~3  撤销三次提交
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>该条 commit SHA 号之后（时间作为参考点）的所有 commit 的修改都会退回到 git 暂存区中</p>
+</blockquote>
+
+<pre><code> git reset --soft [SHA]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>该条 commit SHA 号之后（时间作为参考点）的所有 commit 的修改会被直接丢弃， 缓冲区中不会存储这些修改</p>
+</blockquote>
+
+<pre><code> git reset --hard [SHA]
+
+注意：这样的重置是直接在本地的修改，无法提交到远程服务器，如果直接丢弃的内容已经被推到远程服务器上了，则会造成本地和服务器无法同步的问题，即 git reset --hard 只能针对本地操作，不能针对远程服务器进行同样操作。如果从本地删掉的内容没有推到服务器上，则不会有副作用，如果被推到服务器，则下次本地和服务器进行同步时，这部分删掉的内容仍然会回来。（其实这个问题则可以很好的被 git revert 命令解决，使用g it revert [SHA] 号，该命令撤销对某个 commit 的提交，这一撤销动作会作为一个新的修改存储起来，这样，当你和服务器同步时，就不会产生什么副作用。）
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>撤销已推送的commit</p>
+</blockquote>
+
+<pre><code>  git revert [SHA]
+
+通常情况下，上面这条revert命令会让程序员修改注释，这时候程序员应该标注revert的原因，假设程序员就想使用默认的注释，可以在命令中加上 --no-edit 参数。另一个重要的参数是 -n 或者 --no-commit，应用这个参数会让 revert 改动只限于程序员的本地仓库，而不自动进行 commit，如果程序员想在 revert 之前进行更多的改动，或者想要 revert 多个 commit，这个参数尤其好用
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>撤销已推送的 merge</p>
+</blockquote>
+
+<pre><code>  git revert 3826574510467c51e174db0f53b83e3542bc1c6f -m 2（例如）
+
+对于 revert merge 的情况，程序员需要指出 revert 这个 merge commit 中的哪一个。通过 -m 或者 --mainline 参数，以及配合一个整数参数，git 就知道到底要 revert 哪一个 merge。（使用 git log 3826574510467c51e174db0f53b83e3542bc1 可以查看那次合并提交的两个提交 SHA 值。例如 自己分支合并到主分支，则第一个 SHA 是主分支的，第二个是自己分支，此处的指令即 revert 自己分支）
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>修改提交</p>
+</blockquote>
+
+<pre><code>git rebase -i HEAD~3
+
+将看到 HEAD 到 HEAD~3 的提交
+将第一行的“pick”改成想要的指令，然后保存并退出。修改过的提交呈现退出状态。
+用 commit --amend 保存修改。
+现在已经 commit，但是 rebase 操作还没结束。若要通知这个提交的操作已经结束，请指定 --continue 选项执行 rebase。
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>终止rebase的行动</p>
+</blockquote>
+
+<pre><code>git rebase --abort
+</code></pre>
+
+<hr />
+
+<h1 id="提交">提交</h1>
+
+<blockquote>
+<p>提交暂存区到仓库区</p>
+</blockquote>
+
+<pre><code> git commit -m [message]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>提交暂存区的指定文件到仓库区</p>
+</blockquote>
+
+<pre><code> git commit  [file1] [file2] ... -m [message]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>提交工作区自上次commit之后的变化，直接到仓库区</p>
+</blockquote>
+
+<pre><code> git commit -a
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>提交时显示所有diff信息</p>
+</blockquote>
+
+<pre><code> git commit -v
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>修改最近一次的提交</p>
+</blockquote>
+
+<pre><code>git commit --amend
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>重做上一次commit，并包括指定文件的新变化</p>
+</blockquote>
+
+<pre><code> git commit --amend [file1] [file2]...
+</code></pre>
+
+<hr />
+
+<h1 id="分支">分支</h1>
+
+<blockquote>
+<p>列出所有本地分支</p>
+</blockquote>
+
+<pre><code> git branch
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>列出所有远程分支</p>
+</blockquote>
+
+<pre><code> git branch -r 
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>列出所有分支</p>
+</blockquote>
+
+<pre><code>git branch -a
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>切换分支</p>
+</blockquote>
+
+<pre><code> git checkout [branch]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>新建一个分支，并切换到该分支</p>
+</blockquote>
+
+<pre><code> git checkout -b [branch] 或 git branch [branch]; git checkout [branch]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>新建一个分支，指向指定commit</p>
+</blockquote>
+
+<pre><code> git branch [branch] [commit]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>推送分支</p>
+</blockquote>
+
+<pre><code> git push origin [branch]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>删除分支</p>
+</blockquote>
+
+<pre><code> git branch -d [branch]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>删除远程分支</p>
+</blockquote>
+
+<pre><code> git push origin --delete [branch]
+ git branch -dr [remote/branch]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>清理其他人删除的远程</p>
+</blockquote>
+
+<pre><code> git remote prune origin
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>将当前分支移到branch分支上</p>
+</blockquote>
+
+<pre><code> git reset --hard [branch]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>将一个本地分支重命名</p>
+</blockquote>
+
+<pre><code> git branch -m oldbranchname newbranchname
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>将一个远程分支重命名(假设本地分支和远程对应分支名称相同)</p>
+</blockquote>
+
+<p>a. 重命名远程分支对应的本地分支</p>
+
+<pre><code>git branch -m old-local-branch-name new-local-branch-name
+</code></pre>
+
+<p>b. 删除远程分支</p>
+
+<pre><code>git push origin  :old-local-branch-name
+</code></pre>
+
+<p>c. 上传新命名的本地分支</p>
+
+<pre><code>git push origin  new-local-branch-name: new-local-branch-name
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>在master分支上做了提交想git pull时要使用这个命令，即merge本地提交到下载下来的分支上面了</p>
+</blockquote>
+
+<pre><code>git pull -r
+</code></pre>
+
+<blockquote>
+<p>当刚merge完master 又merge zhanghaiyan/player-info时是不可以直接merge的，要使用此命令</p>
+</blockquote>
+
+<pre><code>git merge zhanghaiyan/player-info --no-ff
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>本地分支合并最新的主分支</p>
+</blockquote>
+
+<pre><code>git merge origin/master
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>本地分支直接同步到远程分支</p>
+</blockquote>
+
+<pre><code>git reset --hard origin/master
+</code></pre>
+
+<hr />
+
+<h1 id="标签">标签</h1>
+
+<blockquote>
+<p>列出所有tag</p>
+</blockquote>
+
+<pre><code> git tag
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>新建一个tag在当前commit</p>
+</blockquote>
+
+<pre><code> git tag [tag]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>新建一个tag在指定commit</p>
+</blockquote>
+
+<pre><code> git tag [tag] [commit]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>删除本地tag</p>
+</blockquote>
+
+<pre><code> git tag -d [tag]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>删除远程tag</p>
+</blockquote>
+
+<pre><code> git push origin :refs/tags/[tagName]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>查看tag信息</p>
+</blockquote>
+
+<pre><code> git show [tag]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>提交指定tag</p>
+</blockquote>
+
+<pre><code> git push [remote] [tag]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>提交所有tag</p>
+</blockquote>
+
+<pre><code>git push [remote] --tags
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>新建一个分支，指向某个tag</p>
+</blockquote>
+
+<pre><code> git checkout -b [branch] [tag]
+</code></pre>
+
+<hr />
+
+<h1 id="查看信息">查看信息</h1>
+
+<blockquote>
+<p>显示有变更的文件</p>
+</blockquote>
+
+<pre><code> git status
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>显示暂存区和工作区的差异</p>
+</blockquote>
+
+<pre><code> git diff
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>显示当前分支的版本历史</p>
+</blockquote>
+
+<pre><code> git log
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>显示commit历史，以及每次commit发生变更的文件</p>
+</blockquote>
+
+<pre><code> git log --stat
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>搜索提交历史，根据关键词</p>
+</blockquote>
+
+<pre><code> git log -S [keyword]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>显示指定文件是什么人在什么时间修改过</p>
+</blockquote>
+
+<pre><code> git blame [file]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>显示某次提交的元数据和内容变化</p>
+</blockquote>
+
+<pre><code> git show [commit]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>显示当前分支的最近几次提交</p>
+</blockquote>
+
+<pre><code> git reflog
+</code></pre>
+
+<hr />
+
+<h1 id="远程同步">远程同步</h1>
+
+<blockquote>
+<p>显示某个远程仓库的信息</p>
+</blockquote>
+
+<pre><code> git remote show [remote]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>取回远程仓库的变化，并与本地分支合并</p>
+</blockquote>
+
+<pre><code> git pull [remote] [branch]
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>上传本地指定分支到远程仓库</p>
+</blockquote>
+
+<pre><code> git push [remote] [branch]
+</code></pre>
+
+<hr />
+
+<h1 id="技巧">技巧</h1>
+
+<blockquote>
+<p>忽略自己对工作目录中的文件修改</p>
+</blockquote>
+
+<pre><code> git update-index --skip-worktree &lt;filepath&gt;
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>列出工作目录中已被忽略修改的文件</p>
+</blockquote>
+
+<pre><code> git ls-files -v . | grep ^S
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>调出某一命令的帮助</p>
+</blockquote>
+
+<pre><code> git reset --help (例如：调出reset的帮助)
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>修改已提交的作者</p>
+</blockquote>
+
+<pre><code>git filter-branch --commit-filter \
+'if [ &quot;    GIT_AUTHOR_NAME&quot; = &quot;your old name&quot; ]; then \
+export GIT_AUTHOR_NAME=&quot;your correct name&quot;;\
+export GIT_AUTHOR_EMAIL= your correct email;\
+export GIT_COMMITTER_NAME=&quot; your correct name&quot;;\
+export GIT_COMMITTER_EMAIL= your correct email;\
+fi;\
+git commit-tree &quot;    @&quot;'
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>假如上面一步执行的过于慢，可以执行下面的方法一个一个修改</p>
+</blockquote>
+
+<pre><code>git rebase -i -p &lt;some HEAD before all of your bad commits&gt;
+
+Then mark all of your bad commits as &quot;edit&quot; in the rebase file. If you also want to change your first commit, you have to manually add it as first line in the rebase file (follow the format of the other lines). Then, when git asks you to amend each commit, do
+    git commit --amend --author &quot;New Author Name &lt;email@address.com&gt;&quot;
+
+edit or just close the editor that opens, and then do
+    git rebase --continue
+
+to continue the rebase.
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>在执行 rebase 之前自动 stash ,之后再自动 pop</p>
+</blockquote>
+
+<pre><code>git config rebase.autoStash true 
+Git 1.8.4之后增加 rebase.autoStash 命令，在2.7引入 --no-autostash 选项取消该标记的功能
+</code></pre>
+
+<hr />
+
+<blockquote>
+<p>查看配置名字和邮箱</p>
+</blockquote>
+
+<pre><code>git config --list
+</code></pre>
+
+<hr />
+</div>
+    <div class="tags">
+      5 Jun 2018
+      
+        
+          <a href="http://zhanghaiyan.net//tags/version-management/">#version management</a>
+        
+       
+    </div>
+    
+  </div>
+
+</div>
+
+<paper-item>
+  
+    <a href="http://zhanghaiyan.net/2018/06/10/behaviour.enabledbehaviour.isactiveandenabledgameobject.activeinhierarchy-%E5%8C%BA%E5%88%AB/"><paper-fab icon="chevron-left"><a></a></paper-fab></a>
+  
+    <div class="flex"></div>
+  
+    <a href="http://zhanghaiyan.net/2018/05/27/%E8%B0%83%E8%AF%95%E4%B9%9D%E6%B3%95%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"><paper-fab icon="chevron-right"></paper-fab></a>
+  
+</paper-item>
+
+      <paper-item>
+        <div class="copyright"></div>
+        <div class="flex"></div>
+        <div class="design">Design <a href="http://pdevty.github.io/blog/">pdevty</a></div>
+      </paper-item>
+    </paper-scroll-header-panel>
+  </paper-drawer-panel>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+</body>
+</html>

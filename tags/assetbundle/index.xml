@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Assetbundle on zhySmile</title>
-    <link>http://zhyOwner.github.io/tags/assetbundle/</link>
+    <link>http://zhanghaiyan.net/tags/assetbundle/</link>
     <description>Recent content in Assetbundle on zhySmile</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <lastBuildDate>Sun, 13 May 2018 21:57:23 +0800</lastBuildDate>
     
-	<atom:link href="http://zhyOwner.github.io/tags/assetbundle/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://zhanghaiyan.net/tags/assetbundle/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>U3D AssetBundle 官方文档（翻译版）学习笔记</title>
-      <link>http://zhyOwner.github.io/post/assetbundlemanual1/</link>
+      <link>http://zhanghaiyan.net/2018/05/13/u3d-assetbundle-%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91%E7%89%88%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Sun, 13 May 2018 21:57:23 +0800</pubDate>
       
-      <guid>http://zhyOwner.github.io/post/assetbundlemanual1/</guid>
+      <guid>http://zhanghaiyan.net/2018/05/13/u3d-assetbundle-%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91%E7%89%88%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>AssetBundle 官方文档学习笔记 最近在看何三思翻译的 Unity AssetBundle 官方文档，在此整理一下前半部分笔记
 AssetBundles AssetBundle是什么？ 会在运行时被加载的归档文件，包含了和平台相关的特定资源。（Models、Textures、Prefabs、Audio clips、Scenes）
 压缩方式？ 根据实际需要，选择引擎内置的算法进行压缩。（LZMA 算法和 LZ4 算法）
