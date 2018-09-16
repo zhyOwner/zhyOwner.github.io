@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术分享 on zhySmile</title>
+    <link>http://zhyOwner.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</link>
+    <description>Recent content in 技术分享 on zhySmile</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Sun, 09 Sep 2018 21:15:06 +0800</lastBuildDate>
+    
+	<atom:link href="http://zhyOwner.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Unity 之协程</title>
+      <link>http://zhyOwner.github.io/post/unitycoroutine/</link>
+      <pubDate>Sun, 09 Sep 2018 21:15:06 +0800</pubDate>
+      
+      <guid>http://zhyOwner.github.io/post/unitycoroutine/</guid>
+      <description>Unity 之协程 1.什么是协程 协程即协同程序，是一种特殊的函数，能够中断执行当前的代码，直到中断指令结束后再接着执行之前的代码。
+2.协程的作用 1. 延时等待一段时间执行代码 2. 等某个操作完成之后再执行后面的代码  3.协程的原理 Unity 在每一帧都会去处理 GameObject 里带有的 Coroutine Function, 直到 Coroutine Function 被执行完毕. 当一个 Coroutine 开始启动时, 它会执行到遇到 yield 为止, 遇到 yield 的时候 Coroutine 会暂停执行, 直到满足 yield 语句的条件, 会开始执行 yield 语句后面的内容, 直到遇到下一个 yield 为止 &amp;hellip; 如此循环直到整个函数结束。 Unity 的协程系统基于 C# 的接口 : IEnumerator, 允许为自己的集合类型编写枚举类. 迭代器模式是通过 IEnumerator 和 IEnumerable 接口及它们的泛型等价物来封装的。如果某个类型实现了 IEnumerable 接口，就意味着它可以被迭代访问。
+IEnumerator 接口定义了以向前方式遍历或枚举集合元素的基本底层协议。声明方式如下：
+public interface IEnumerator { object Current { get; } bool MoveNext(); void Reset(); }  MoveNext 将当前元素向前移动到下一个位置，如果集合中没有更多的元素，那么它会返回 false。Current 返回当前位置的元素。在取出第一个元素之前，必须先调用 MoveNext——即使是空集合也支持这个操作。调用 Reset 方法的作用是将位置移动回到起点，允许再一次遍历集合。</description>
+    </item>
+    
+    <item>
+      <title>Unity UGUI - Dropdown</title>
+      <link>http://zhyOwner.github.io/post/unityuidropdown/</link>
+      <pubDate>Wed, 05 Sep 2018 22:55:59 +0800</pubDate>
+      
+      <guid>http://zhyOwner.github.io/post/unityuidropdown/</guid>
+      <description>UGUI 组件之 Dropdown 下拉框 前些日子在工作中遇到一个 Bug，是一个下拉框，第一次打开界面，点击下拉框，会触发正常的下拉框点击事件，不会触发到下拉框展开之后层级底下的按钮点击事件。但是当切换别的界面之后，再点击下拉框，下拉框点击事件就不会再触发，相反，下层按钮点击事件会触发。
+看到这个 bug，首先想到的就是有可能是层级问题导致。然后去查代码，发现这个下拉框的实现是通过 UGUI 的 Dropdown 组件。之前并没有用过这个组件，对它的实现原理不了解。去复现问题发现原本下拉列表上没有 Canvas 组件，但是在下拉框展开之后，会给下拉列表添上一个 Canvas 组件，并且其 sortingOrder 很大，为30000。当打开别的界面之后，再点击下拉列表，其 sortingOrder 变小了，查找发现等于其父物体上 Canvas sortingOrder 的值。如此一来，就导致了层级错误，触发事件出问题。
+接着我去查看 Dropdown 的源码，在第一次 Dropdown Show 的时候会去初始化下拉列表，添加 Canvas ，设置 sortingOrder = 30000，并且生成一个 Blocker 在根 Canvas 下，设置其 sortingOrder = (Dropdown Canvas).sortingOrder - 1，即 29999。我猜想这么设值的原因是，3000 足够大，能够保证下拉框是最上层，添加 Blocker 是为了防止点击到下层物体。
+但是问题出在，我们的 UI 会根据界面展示时机去设置其 Canvas 的 sortingOrder，当打开别的界面返回的时候，会给这个下拉框的 sortingOrder 设置为和根 Canvas 相同的值，打开下拉框的时候，再次生成 Blocker 并设置 sortingOrder，就会造成遮挡功能失效，Bug 出现。
+最终的解决方案是必要的时候手动再去设置下拉列表的 sortingOrder。</description>
+    </item>
+    
+    <item>
+      <title>Unity 接入 Android SDK，切换黑屏问题</title>
+      <link>http://zhyOwner.github.io/post/unityandroidsdkquestion1/</link>
+      <pubDate>Sun, 22 Jul 2018 20:56:10 +0800</pubDate>
+      
+      <guid>http://zhyOwner.github.io/post/unityandroidsdkquestion1/</guid>
+      <description>Unity 接入 Android SDK，切换黑屏问题 问题描述：在 Unity 接入Android SDK 以后，打开 SDK 界面（例如登陆或支付），切换到后台，回来之后游戏背景黑屏问题（SDK 的界面还在，游戏内背景黑了）。
+原因：有些 SDK 的界面是采用启动一个新的 activity 的方式。所以导致我们在调用 SDK 的时候，游戏本身会调用生命周期的 pause 。这时候按下设备的 home 键，切换到后台，SDK 应该也会调用 pause 。然后重新返回游戏，这时候只有 SDK 会调用 resume，但我们游戏自己的程序并没有调用 resume。
+解决方法：在 onPause 和 onStart 里分别判断当前 mainactivity 是否是 SDK 的 activity，假如是，就手动调用游戏 activity 的 onResume。
+另附上 Android Activity 生命周期图； </description>
+    </item>
+    
+    <item>
+      <title>Unity 接入 Android SDK</title>
+      <link>http://zhyOwner.github.io/post/unityandroidsdk/</link>
+      <pubDate>Mon, 18 Jun 2018 20:00:10 +0800</pubDate>
+      
+      <guid>http://zhyOwner.github.io/post/unityandroidsdk/</guid>
+      <description>Unity 接入 Android SDK SDK：软件开发工具包（Software Development Kit），软件开发工具包广义上指辅助开发某一类软件的相关文档、范例和工具的集合
+需要的开发环境：Unity、安卓开发工具（Eclipse 或 Android Studio） 一、首先阅读文档，有些文档说的不清楚，所以要多读，注意要反复阅读，不要遗漏任何细节 二、将示例 demo 看一遍，查看其调用方式，回调等等 三、接下来步入正轨，开始着手接入
+Tips：为了调试的方便，可以先用一个测试小项目接入 SDK，节省调试成本和其余部分的影响，单纯的去测试 SDK 接入，待测试项目通过，再去接入项目内。
+接入的SDK 一般分为两种：一种是封装好的适用于 Unity 的。这种就很简单了，只需要去看一下有哪些接口，直接去调用相应的接口就可以了。 但是更多的是另一种，纯 Android 的，这就需要我们去写一些 Android 部分，主要处理 Unity 与 Android 通信的内容。
+对于接入纯 Android 的 SDK，我接过的流程如下： 1.创建 Android 工程，写 java 脚本，处理 Unity 与 Android 通信。 2.将 java 脚本打成 jar 包，放入 Unity 工程。 3.Unity 工程里去调用对应方法。
+关于 Unity 与 Android 交互： 1.处理 Unity 接收 Android 回调： UnityPlayer.UnitySendMessage(_unityCallBackObjectName, &amp;ldquo;LoginCancelCallBack&amp;rdquo;, &amp;ldquo;&amp;rdquo;); 参数1:GameObject名称，参数2：函数名，参数3:字符串参数。 注意：物体上不存在名称为参数2的函数，不会报错。参数3只能传一个字符串参数，不能传多个，如果需要传多个参数，只能分几个函数调用，或者字符串用特殊字符合并传递再拆分接收。但是参数3不能为null，否则会强制退出。</description>
+    </item>
+    
+    <item>
+      <title>Behaviour.enabled、Behaviour.isActiveAndEnabled、GameObject.activeInHierarchy 区别</title>
+      <link>http://zhyOwner.github.io/post/unityknowledgepoint1/</link>
+      <pubDate>Sun, 10 Jun 2018 18:23:01 +0800</pubDate>
+      
+      <guid>http://zhyOwner.github.io/post/unityknowledgepoint1/</guid>
+      <description>Behaviour.enabled、Behaviour.isActiveAndEnabled、GameObject.activeInHierarchy 区别 最近在写代码的时候，遇到了三个不太清楚的 API（Behaviour.enabled、Behaviour.isActiveAndEnabled 和 GameObject.activeInHierarchy），去看了 unity 文档，理解的也不是很清楚，于是自己去研究了一下这三个 API 的差异。
+一.关于 Behaviour.enabled Unity 官方文档介绍：Enabled Behaviours are Updated, disabled Behaviours are not.
+使用这个 API，分别查看脚本所绑定 GameObject 和脚本激活与失活状态下，变量的情况，结果如下：
+1.当 GameObject = Active，Script = Enabled 的时候，Behaviour.enabled = true 2.当 GameObject = Active，Script = Disabled 的时候，Behaviour.enabled = false 3.当 GameObject = Inactive，Script = Enabled 的时候，Behaviour.enabled = true 4.当 GameObject = Inactive，Script = Disabled 的时候，Behaviour.enabled = false  结论：Behaviour.enabled 与 GameObject 的状态无关，只与 Script 的状态有关。 ① 当 Script = Enabled，Behaviour.</description>
+    </item>
+    
+    <item>
+      <title>U3D AssetBundle 官方文档（翻译版）学习笔记</title>
+      <link>http://zhyOwner.github.io/post/assetbundlemanual1/</link>
+      <pubDate>Sun, 13 May 2018 21:57:23 +0800</pubDate>
+      
+      <guid>http://zhyOwner.github.io/post/assetbundlemanual1/</guid>
+      <description>AssetBundle 官方文档学习笔记 最近在看何三思翻译的 Unity AssetBundle 官方文档，在此整理一下前半部分笔记
+AssetBundles AssetBundle是什么？ 会在运行时被加载的归档文件，包含了和平台相关的特定资源。（Models、Textures、Prefabs、Audio clips、Scenes）
+压缩方式？ 根据实际需要，选择引擎内置的算法进行压缩。（LZMA 算法和 LZ4 算法）
+作用？ 可下载的内容更新（DLC)、降低初始安装包大小、针对用户平台进行最优化资源加载、降低运行时的内存压力
+ssetBundle里有什么？ 1、存储在磁盘上的实际文件，称这种文件为“AssetBundle 归档&amp;rdquo;,里面保存了额外的一些文件。分为两种：序列化文件和资源文件。 2、实际的 AssetBundle 对象。包含了添加到归档中的所有资产（Assets）的文件路径以及与这些资产相对应的对象们这两者之间的映射。 什么是序列化文件？ 用资产组合形成各个对象，将他们写入磁盘中的一个文件，这个文件就是序列化文件。 什么是资源文件？ 一个个二进制数据块，这些数据块分别存储了特定类型的资产，这可以让我们在另一个线程上上更有效的从磁盘中加载它们。
+AssetBundle工作流 配置 Assets 到 AssetBundles? 在 Inspector 面板底部，可以设置 AssetBundle 及其变量。左侧设置 AssetBundle，右侧设置变量。下拉选项栏会显示已经注册过的 AssetBundle 的名称选项
+AssetBundle 名称？ 支持目录结构。想要添加子文件夹，只需要用”/“分隔文件名称即可。
+变量？ 变量名称对创建 AssetBundle 不是必须的。
+创建 AssetBundles？ 写一个编辑器脚本 BuildPipeline.BuildAssetBundles(string outputPath, BuildAssetBundleOptions assetBundleOptions, BuildTarget targetPlatform)； 所有被命名了的 Assets 都会被构建成对应的 AssetBundle ，并放置在定义的路径下。 加载 AssetBundles 和 Assets? 本地仓库：AssetBundle.LoadFromFile(string path)； 远程仓库：UnityWebRequest.GetAssetBundle(string uri)； DownloadHandlerAssetBundle.</description>
+    </item>
+    
+  </channel>
+</rss>

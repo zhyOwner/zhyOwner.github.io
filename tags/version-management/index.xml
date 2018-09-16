@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Version Management on zhySmile</title>
+    <link>http://zhyOwner.github.io/tags/version-management/</link>
+    <description>Recent content in Version Management on zhySmile</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Tue, 05 Jun 2018 22:06:58 +0800</lastBuildDate>
+    
+	<atom:link href="http://zhyOwner.github.io/tags/version-management/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git 常用命令总结</title>
+      <link>http://zhyOwner.github.io/post/git/</link>
+      <pubDate>Tue, 05 Jun 2018 22:06:58 +0800</pubDate>
+      
+      <guid>http://zhyOwner.github.io/post/git/</guid>
+      <description>Git 常用命令总结 仓库  在当前目录新建一个 Git 代码库
+ git init   新建一个目录，将其初始化为 Git 代码库
+ git init [project-name]   下载一个项目和它的整个代码历史
+ git clone [url]   clone 到指定目录
+  git clone XXX.git &amp;quot;指定目录&amp;quot;   clone 时创建新的分支替代默认 Origin HEAD(master)
+ git clone -b [new_branch_name] xxx.git   clone 远程分支（git clone 命令默认的只会建立 master 分支）,想要 clone 指定的某一远程分支
+ git checkout -t origin/dev 或 git checkout -b dev origin/dev  添加/删除文件  添加指定文件到暂存区</description>
+    </item>
+    
+  </channel>
+</rss>

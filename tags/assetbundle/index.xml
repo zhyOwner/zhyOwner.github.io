@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Assetbundle on zhySmile</title>
+    <link>http://zhyOwner.github.io/tags/assetbundle/</link>
+    <description>Recent content in Assetbundle on zhySmile</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Sun, 13 May 2018 21:57:23 +0800</lastBuildDate>
+    
+	<atom:link href="http://zhyOwner.github.io/tags/assetbundle/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>U3D AssetBundle 官方文档（翻译版）学习笔记</title>
+      <link>http://zhyOwner.github.io/post/assetbundlemanual1/</link>
+      <pubDate>Sun, 13 May 2018 21:57:23 +0800</pubDate>
+      
+      <guid>http://zhyOwner.github.io/post/assetbundlemanual1/</guid>
+      <description>AssetBundle 官方文档学习笔记 最近在看何三思翻译的 Unity AssetBundle 官方文档，在此整理一下前半部分笔记
+AssetBundles AssetBundle是什么？ 会在运行时被加载的归档文件，包含了和平台相关的特定资源。（Models、Textures、Prefabs、Audio clips、Scenes）
+压缩方式？ 根据实际需要，选择引擎内置的算法进行压缩。（LZMA 算法和 LZ4 算法）
+作用？ 可下载的内容更新（DLC)、降低初始安装包大小、针对用户平台进行最优化资源加载、降低运行时的内存压力
+ssetBundle里有什么？ 1、存储在磁盘上的实际文件，称这种文件为“AssetBundle 归档&amp;rdquo;,里面保存了额外的一些文件。分为两种：序列化文件和资源文件。 2、实际的 AssetBundle 对象。包含了添加到归档中的所有资产（Assets）的文件路径以及与这些资产相对应的对象们这两者之间的映射。 什么是序列化文件？ 用资产组合形成各个对象，将他们写入磁盘中的一个文件，这个文件就是序列化文件。 什么是资源文件？ 一个个二进制数据块，这些数据块分别存储了特定类型的资产，这可以让我们在另一个线程上上更有效的从磁盘中加载它们。
+AssetBundle工作流 配置 Assets 到 AssetBundles? 在 Inspector 面板底部，可以设置 AssetBundle 及其变量。左侧设置 AssetBundle，右侧设置变量。下拉选项栏会显示已经注册过的 AssetBundle 的名称选项
+AssetBundle 名称？ 支持目录结构。想要添加子文件夹，只需要用”/“分隔文件名称即可。
+变量？ 变量名称对创建 AssetBundle 不是必须的。
+创建 AssetBundles？ 写一个编辑器脚本 BuildPipeline.BuildAssetBundles(string outputPath, BuildAssetBundleOptions assetBundleOptions, BuildTarget targetPlatform)； 所有被命名了的 Assets 都会被构建成对应的 AssetBundle ，并放置在定义的路径下。 加载 AssetBundles 和 Assets? 本地仓库：AssetBundle.LoadFromFile(string path)； 远程仓库：UnityWebRequest.GetAssetBundle(string uri)； DownloadHandlerAssetBundle.</description>
+    </item>
+    
+  </channel>
+</rss>
